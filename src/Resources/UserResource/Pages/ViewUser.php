@@ -16,7 +16,7 @@ class ViewUser extends ViewRecord
         return Config::get('filament-authentication.resources.UserResource');
     }
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         $user = Filament::auth()->user();
         if ($user === null) {

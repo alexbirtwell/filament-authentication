@@ -3,19 +3,19 @@
 namespace Phpsa\FilamentAuthentication\Resources\RoleResource\RelationManager;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Spatie\Permission\PermissionRegistrar;
 
-class PermissionRelationManager extends BelongsToManyRelationManager
+class PermissionRelationManager extends \Filament\Resources\RelationManagers\RelationManager
 {
     protected static string $relationship = 'permissions';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -28,7 +28,7 @@ class PermissionRelationManager extends BelongsToManyRelationManager
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([

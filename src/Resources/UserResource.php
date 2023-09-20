@@ -6,9 +6,9 @@ namespace Phpsa\FilamentAuthentication\Resources;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TagsColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -31,7 +31,7 @@ class UserResource extends Resource
         static::$model = config('filament-authentication.models.User');
     }
 
-    protected static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): ?string
     {
         return strval(__(config('filament-authentication.section.group') ?? 'filament-authentication::filament-authentication.section.group'));
     }

@@ -13,8 +13,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentAuthenticationProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-authentication';
-
     protected array $widgets = [
         LatestUsersWidget::class,
     ];

@@ -3,16 +3,16 @@
 namespace Phpsa\FilamentAuthentication\Resources\RoleResource\RelationManager;
 
 use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
-class UserRelationManager extends BelongsToManyRelationManager
+class UserRelationManager extends \Filament\Resources\RelationManagers\RelationManager
 {
     protected static string $relationship = 'users';
 
     protected static ?string $recordTitleAttribute = 'email';
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([
